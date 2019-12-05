@@ -1,2 +1,2 @@
 # micrometa
-Reading of microsocopy metadata
+Reading of microscopy metadata

@@ -4,8 +4,8 @@ requirements = ["configparser", "natsort", "pyyaml"]
 
 setup(
     name="micrometa",
-    version="0.0.3",
-    description="Reading of microsocopy metadata",
+    version="0.0.4",
+    description="Reading of microscopy metadata",
     install_requires=requirements,
     extras_require={"dev": ["black", "pytest-cov", "pytest"]},
     python_requires=">=3.6",
