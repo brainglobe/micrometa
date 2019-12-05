@@ -1,15 +1,15 @@
-from setuptools import setup, find_namespace_packages
+from setuptools import setup, find_packages
 
 requirements = ["configparser", "natsort", "pyyaml"]
 
 setup(
     name="micrometa",
-    version="0.0.1",
+    version="0.0.2",
     description="Reading of microsocopy metadata",
     install_requires=requirements,
     extras_require={"dev": ["black", "pytest-cov", "pytest"]},
     python_requires=">=3.6",
-    packages=find_namespace_packages(exclude="tests*"),
+    packages=find_packages(),
     include_package_data=True,
     url="https://github.com/adamltyson/micrometa",
     author="Adam Tyson",
