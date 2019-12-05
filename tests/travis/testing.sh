@@ -1,2 +1,2 @@
 brainio -h
-pytest --cov=brainio
+pytest --cov=micrometa

@@ -3,8 +3,7 @@ import pytest
 from pathlib import Path
 from math import isclose
 
-import cellfinder.tools.metadata as meta
-from micrometa.tools import CommandLineInputError
+import micrometa.micrometa as meta
 
 data_dir = Path("tests", "data")
 metadata_dir = data_dir / "metadata"
@@ -98,54 +97,3 @@ class Args:
         self.y_pixel_um = 100
         self.z_pixel_um = 3
         self.metadata = missing_metadata
-
-
-def test_define_pixel_sizes():
-    args = Args()
-    args.set_all_pixel_sizes()
-    args = meta.define_pixel_sizes(args)
-    assert isclose(1, args.x_pixel_um, abs_tol=VOX_DIM_TOLERANCE)
-    assert isclose(2, args.y_pixel_um, abs_tol=VOX_DIM_TOLERANCE)
-    assert isclose(3, args.z_pixel_um, abs_tol=VOX_DIM_TOLERANCE)
-
-    # baking tray
-    args = Args()
-    args.set_some_pixel_sizes_w_meta_baking_tray()
-    args = meta.define_pixel_sizes(args)
-    assert isclose(10, args.x_pixel_um, abs_tol=VOX_DIM_TOLERANCE)
-    assert isclose(2.14, args.y_pixel_um, abs_tol=VOX_DIM_TOLERANCE)
-    assert isclose(40, args.z_pixel_um, abs_tol=VOX_DIM_TOLERANCE)
-
-    # mesospim
-    args = Args()
-    args.set_some_pixel_sizes_w_meta_mesospim()
-    args = meta.define_pixel_sizes(args)
-    assert isclose(100, args.x_pixel_um, abs_tol=VOX_DIM_TOLERANCE)
-    assert isclose(8.23, args.y_pixel_um, abs_tol=VOX_DIM_TOLERANCE)
-    assert isclose(10, args.z_pixel_um, abs_tol=VOX_DIM_TOLERANCE)
-
-    # cellfinder
-    args = Args()
-    args.set_some_pixel_sizes_w_meta_cellfinder()
-    args = meta.define_pixel_sizes(args)
-    assert isclose(2, args.x_pixel_um, abs_tol=VOX_DIM_TOLERANCE)
-    assert isclose(0.2, args.y_pixel_um, abs_tol=VOX_DIM_TOLERANCE)
-    assert isclose(40, args.z_pixel_um, abs_tol=VOX_DIM_TOLERANCE)
-
-    # no metadata
-    args = Args()
-    args.set_some_pixel_sizes_no_meta()
-    with pytest.raises(CommandLineInputError):
-        assert meta.define_pixel_sizes(args)
-
-    # unsupported metadata
-    args = Args()
-    args.set_some_pixel_sizes_unsupported_meta()
-    with pytest.raises(CommandLineInputError):
-        assert meta.define_pixel_sizes(args)
-
-    # missing metadata
-    args = Args()
-    args.set_some_pixel_sizes_missing_meta()
-    with pytest.raises(CommandLineInputError):
-        assert meta.define_pixel_sizes(args)
