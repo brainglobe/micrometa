@@ -9,7 +9,7 @@ Functions to read image acqusition metadata files.
 import configparser
 import yaml
 
-from micrometa import tools
+from . import tools
 
 SUPPORTED_METADATA_TYPES = ["Cellfinder", "BakingTray", "mesoSPIM"]
 
