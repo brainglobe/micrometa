@@ -1,2 +1,2 @@
-brainio -h
+micrometa -h
 pytest --cov=micrometa
