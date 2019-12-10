@@ -12,7 +12,8 @@ are:
 recipe files 
 * [mesoSPIM](https://github.com/mesoSPIM/mesoSPIM-control) 
  metadata files
-* [cellfinder custom metadata files](https://github.com/SainsburyWellcomeCentre/cellfinder/tree/master/doc_build/examples/cellfinder_metadata.ini)
+ * [amap custom metadata files](https://raw.githubusercontent.com/adamltyson/micrometa/master/tests/data/metadata/amap_metadata.ini)
+* [cellfinder custom metadata files](https://raw.githubusercontent.com/adamltyson/micrometa/master/tests/data/metadata/cellfinder_metadata.ini)
 
 Parameters currently supported are:
 * Number of planes in the axial direction
