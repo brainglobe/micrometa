@@ -11,7 +11,7 @@ are:
 * [BakingTray](https://github.com/SainsburyWellcomeCentre/BakingTray) 
 recipe files 
 * [mesoSPIM](https://github.com/mesoSPIM/mesoSPIM-control) 
- metadata files or 
+ metadata files
 * [cellfinder custom metadata files](https://github.com/SainsburyWellcomeCentre/cellfinder/tree/master/doc_build/examples/cellfinder_metadata.ini)
 
 Parameters currently supported are:
