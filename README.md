@@ -1,5 +1,6 @@
 [![Travis](https://img.shields.io/travis/com/adamltyson/micrometa?label=Travis%20CI)](
     https://travis-ci.com/adamltyson/micrometa)
+[![Coverage Status](https://coveralls.io/repos/github/adamltyson/micrometa/badge.svg?branch=master)](https://coveralls.io/github/adamltyson/micrometa?branch=master)
     
 # micrometa
 Reading of microscopy metadata
