@@ -27,8 +27,8 @@ pip install micrometa
 
 ### To use
 ```python
-from micrometa.micrometa import get_acqusition_metadata
-metadata = get_acqusition_metadata("cellfinder_metadata.ini")
+from micrometa.micrometa import get_acquisition_metadata
+metadata = get_acquisition_metadata("cellfinder_metadata.ini")
 print(metadata.x_pixel_um)
 print(metadata.y_pixel_um)
 print(metadata.z_pixel_um)

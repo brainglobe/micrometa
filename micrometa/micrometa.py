@@ -26,7 +26,7 @@ MESOSPIM_STR = "raw_meta"
 MESOSPIM_SUFFIX = ".txt"
 
 
-def get_acqusition_metadata(metadata_path):
+def get_acquisition_metadata(metadata_path):
     """
     Parses metadata files. Will guess what kind of metadata it is.
     :param metadata_path: Pathlib object referencing the metadata file
