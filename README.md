@@ -1,3 +1,6 @@
+[![Travis](https://img.shields.io/travis/com/adamltyson/micrometa?label=Travis%20CI)](
+    https://travis-ci.com/adamltyson/micrometa)
+    
 # micrometa
 Reading of microscopy metadata
 
