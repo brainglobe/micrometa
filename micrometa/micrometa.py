@@ -11,10 +11,13 @@ import yaml
 
 from . import tools
 
-SUPPORTED_METADATA_TYPES = ["Cellfinder", "BakingTray", "mesoSPIM"]
+SUPPORTED_METADATA_TYPES = ["Cellfinder", "amap", "BakingTray", "mesoSPIM"]
 
 CELLFINDER_STR = "cellfinder_meta"
 CELLFINDER_SUFFIX = ".ini"
+
+AMAP_STR = "amap_meta"
+AMAP_SUFFIX = ".ini"
 
 BAKING_TRAY_STR = "recipe"
 BAKING_TRAY_SUFFIX = ".yml"
@@ -44,6 +47,10 @@ def get_acqusition_metadata(metadata_path):
     ):
         metadata = get_cellfinder_metadata(metadata_path)
 
+    elif AMAP_STR in metadata_path.name and (
+        metadata_path.suffix == AMAP_SUFFIX
+    ):
+        metadata = get_amap_metadata(metadata_path)
     else:
         raise NotImplementedError(
             "The metadata type of file: '{}' is not yet supported. Please "
@@ -58,6 +65,40 @@ def get_acqusition_metadata(metadata_path):
 class CellfinderMetadata:
     """
     Class to deal with cellfinder custom metadata files
+    """
+
+    def __init__(self, metadata_path):
+        self._metadata_path = metadata_path
+        self._metadata = read_ini(metadata_path)
+
+    @property
+    def x_pixel_um(self):
+        pixel_um = self._metadata["voxels"].getfloat("x")
+        tools.check_positive_float(pixel_um, none_allowed=False)
+        return pixel_um
+
+    @property
+    def y_pixel_um(self):
+        pixel_um = self._metadata["voxels"].getfloat("y")
+        tools.check_positive_float(pixel_um, none_allowed=False)
+        return pixel_um
+
+    @property
+    def z_pixel_um(self):
+        pixel_um = self._metadata["voxels"].getfloat("z")
+        tools.check_positive_float(pixel_um, none_allowed=False)
+        return pixel_um
+
+    @property
+    def num_planes(self):
+        num_planes = self._metadata["planes"].getint("num_planes")
+        tools.check_positive_int(num_planes, none_allowed=False)
+        return num_planes
+
+
+class AmapMetadata:
+    """
+    Class to deal with amap custom metadata files
     """
 
     def __init__(self, metadata_path):
@@ -195,6 +236,16 @@ def get_cellfinder_metadata(metadata_path):
     """
 
     return CellfinderMetadata(metadata_path)
+
+
+def get_amap_metadata(metadata_path):
+    """
+    Parses amap custom metadata files.
+    :param metadata_path: Pathlib object referencing the metadata file
+    :return: Object with potentially useful metadata attributes
+    """
+
+    return AmapMetadata(metadata_path)
 
 
 def get_baking_tray_metadata(metadata_path):
