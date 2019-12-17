@@ -7,7 +7,15 @@ setup(
     version="0.0.9",
     description="Reading of microscopy metadata",
     install_requires=requirements,
-    extras_require={"dev": ["black", "pytest-cov", "pytest", "coveralls"]},
+    extras_require={
+        "dev": [
+            "black",
+            "pytest-cov",
+            "pytest",
+            "coveralls",
+            "coverage<=4.5.4",
+        ]
+    },
     python_requires=">=3.6",
     packages=find_packages(),
     include_package_data=True,
