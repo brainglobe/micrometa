@@ -4,7 +4,7 @@ requirements = ["configparser", "natsort", "pyyaml", "luddite"]
 
 setup(
     name="micrometa",
-    version="0.0.9",
+    version="0.0.10",
     description="Reading of microscopy metadata",
     install_requires=requirements,
     extras_require={
