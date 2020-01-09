@@ -29,19 +29,17 @@ after_success:
 - coveralls
 script:
 - travis_wait 40 bash $TEST_CMD
-
 notifications:
   email:
     recipients:
     - adam.tyson@ucl.ac.uk
     on_success: change
     on_failure: always
-
 deploy:
   provider: pypi
   user: adamltyson
-  password:
-    secure: tnBTQb3WbG+8hKms88f1umZYWtrHwaV2HniO64bfx6o7SDXt0UYQg59uAjCb94FTSMQal6Q70fvVVxWeTovj6N9FTxGg7kDfQk3ksOU27J73tYLQJ7t1ySte/4Pgviep2gldcSQ9lTvDwzJTm2BAVqM+bUG/OZdjrBTYaWJeEocmoj3N5o26P7aOqoNXqrWj5vYlK9M3d0K2v6xPGlsCwz9n6sHc6YWxxbTNscMY+K9/+7rAv+/n85wNcHkbCobgfKSzoV6m9sxX2G1kIzhHRA2T7HsQBGT+ym5iJfFZnZpSyCUej3FzEn+eFt+5SE2Zto/9JkS3mbhfJdHjcL4mbkl4Mgo5kpEKTbQq5MU9wzMkRw77ev61erf6bhO2INW8IMCmPl92z/syHmYBDODgOQnL+2aIR/wOl+cNYCE56D2QGh7bxWyQHLCKP5i8g6T9frDd4ntNEUOoBnHmF9BG3pWHU0fnevfOMapVMkZw4YLCPfaHN6vwM508HD2EcjTlWoo6aCX6ODpK164GOpFgdKYFVnPg6rZ9BmJZiv9Jd1WwJ4avRz+bkQP/t/+zDgaezK4BtJmyr44P3aTS/JLvmByjYV+z9XYFHp0A7UXjuZt6NxG+0PtM5vLyofeglnTUeESNnVOyZ4VExWf+fi9bFFE6AlxAhDkJLcXuFbjmgww=
   distributions: sdist bdist_wheel
   on:
     tags: true
+  password:
+    secure: O9645gbfNFwX0X4gvRWepo09gUpLxDj+RB8gtcrC05z9ZrdEq5JcmIzcWIAvaxR/YMgiLf6GqLqXZ73R3QGgN6ZE9xI3GO0RIuhh+OJSVxAbbKjVXCt6N8dIEdMsj0TZ2rpQqM5/4jcM1riOayje/SIMBRJWl+MiER4PaHF9H8Hswtorn1esN7lbZ+t1583GQxeeKPbqA/tiHTxl5LuA0WoyjlIQPDPS5whONKI8JUZRbN581ep3uGweena1wNJXvDwkSaY40h/ODuJDLeM1CAMPiD2N/F4d0D0+xAggVthpfx3utKj5gRc8VLf4HivKTvUQfGFglnGm0IjTuUkcCRzpr90eBE2nxzzRaqSfrTOjjMxBBGNotcnQR9AxtytdBlTIL1T1AM3pO6B2Mo+RAO/LGNt1fcPLbLiVHTCLflikg8blDlHQwRdyqwU1Zm82GsASYkNCa/+tKCqhnWuVU1aC2X9aAdonfeaXZEQthUrHO65NkIvGp8Prd8AEfD8L03GpWw+l6n0WYVJQJputwqQSCnBwci3FbooJ+7Hnm8QCvtsFd+QY8Fz3Hjg7tFC4aLpcbFd+fWqH89z/XdJZ7tsSpJLiMxkMLrUMbOqnko4IyPb44vtp0yB5CHihIip2W37rOEo0F1eOPShpNlB3BeszaHnx+cemnRShFX5PRWQ=
