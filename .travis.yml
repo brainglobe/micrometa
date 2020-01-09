@@ -1,5 +1,4 @@
 language: python
-
 matrix:
   include:
   - os: linux
@@ -14,26 +13,22 @@ matrix:
     python: 3.8
     dist: bionic
     env: PIP_CMD='pip install -e .[dev]' TEST_CMD='tests/travis/testing.sh'
-
 before_install:
-  - wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-  - bash miniconda.sh -b -p $HOME/miniconda
-  - export PATH="$HOME/miniconda/bin:$PATH"
-  - hash -r
-  - conda config --set always_yes yes --set changeps1 no
-  - conda info -a
-
+- wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+- bash miniconda.sh -b -p $HOME/miniconda
+- export PATH="$HOME/miniconda/bin:$PATH"
+- hash -r
+- conda config --set always_yes yes --set changeps1 no
+- conda info -a
 install:
-  - conda create -n test-environment python=$TRAVIS_PYTHON_VERSION
-  - source activate test-environment
-  - $PIP_CMD
-  - conda info -a
-
+- conda create -n test-environment python=$TRAVIS_PYTHON_VERSION
+- source activate test-environment
+- "$PIP_CMD"
+- conda info -a
 after_success:
-  - coveralls
-
+- coveralls
 script:
-  - travis_wait 40 bash $TEST_CMD
+- travis_wait 40 bash $TEST_CMD
 
 notifications:
   email:
@@ -41,3 +36,12 @@ notifications:
     - adam.tyson@ucl.ac.uk
     on_success: change
     on_failure: always
+
+deploy:
+  provider: pypi
+  user: adamltyson
+  password:
+    secure: tnBTQb3WbG+8hKms88f1umZYWtrHwaV2HniO64bfx6o7SDXt0UYQg59uAjCb94FTSMQal6Q70fvVVxWeTovj6N9FTxGg7kDfQk3ksOU27J73tYLQJ7t1ySte/4Pgviep2gldcSQ9lTvDwzJTm2BAVqM+bUG/OZdjrBTYaWJeEocmoj3N5o26P7aOqoNXqrWj5vYlK9M3d0K2v6xPGlsCwz9n6sHc6YWxxbTNscMY+K9/+7rAv+/n85wNcHkbCobgfKSzoV6m9sxX2G1kIzhHRA2T7HsQBGT+ym5iJfFZnZpSyCUej3FzEn+eFt+5SE2Zto/9JkS3mbhfJdHjcL4mbkl4Mgo5kpEKTbQq5MU9wzMkRw77ev61erf6bhO2INW8IMCmPl92z/syHmYBDODgOQnL+2aIR/wOl+cNYCE56D2QGh7bxWyQHLCKP5i8g6T9frDd4ntNEUOoBnHmF9BG3pWHU0fnevfOMapVMkZw4YLCPfaHN6vwM508HD2EcjTlWoo6aCX6ODpK164GOpFgdKYFVnPg6rZ9BmJZiv9Jd1WwJ4avRz+bkQP/t/+zDgaezK4BtJmyr44P3aTS/JLvmByjYV+z9XYFHp0A7UXjuZt6NxG+0PtM5vLyofeglnTUeESNnVOyZ4VExWf+fi9bFFE6AlxAhDkJLcXuFbjmgww=
+  distributions: sdist bdist_wheel
+  on:
+    tags: true
