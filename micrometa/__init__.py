@@ -1,4 +1,4 @@
-__version__ = "0.0.11a5"
+__version__ = "0.0.11"
 __author__ = "Adam Tyson"
 __license__ = "GPL-3.0"
 __name__ = "micrometa"
