@@ -36,9 +36,11 @@ notifications:
     on_success: change
     on_failure: always
 deploy:
+  matrix:
   - provider: pypi
     user: __token__
     distributions: sdist bdist_wheel
-    password: pypi-AgEIcHlwaS5vcmcCJDk1MGFiZDg0LTgzYjUtNDVlYy1iZjhjLTQ2YjUxYTViNzgwOAACOnsicGVybWlzc2lvbnMiOiB7InByb2plY3RzIjogWyJtaWNyb21ldGEiXX0sICJ2ZXJzaW9uIjogMX0AAAYgMICzifQHh4wzLRLUSYbvgnRRORZT7mX13YP204l4eYY
     on:
       branch: dev
+  password:
+    secure: BpjyOC2xT3gSrABEE54nihReichfk4XDlyBCq3ZOIi+ndvtjjf6L/JuhjPxzw7V8vhEoNVWRbpe537BVZk2VLebc7vQfSjTdmOdAe3vdC1pk8+VIaAf7nzEB/FU3ce5OsmXNbUpgciUxo2C+VlaNfWpCru/vR/jxUO5/SHB+1/gEXyKMihyubpear6Anv1npzmEsQE7GclM+UzKJv1G8FxqTfjUWiKhnfqsejD6ByjuPAKAD/LZYpzU2kTq1JBi44qw0ARHAIvKLQK32Lz6gx/I9vO9rUNod+J4vGtBY/sjMJLcqzW5ivbInlw86DMF628hoD6J8N2ZefUwU/QlwRQ/HbvMu6rtc3COS6pLMSHV/aUdHVcnnPK4P/Vt37e4j0cj1vD81CsOjjpObRRKxEMilUZxRQ0HtY5K9x8kbamwXPCgxDZpGIoesq0zkSCLujS2I8CpnBldsHPrA/8qP5JW1d17LH1jYe2er3Tz5Oo9Luj7cUsRP2iGeY/Zke2SEBuEwf3TiceeZSEz/kshmZmTNg3xd2hXr9aSRqvEx8hRm6eml1Bt87X6SISChvnkWDominpo/DbG03vvphclWQILGMOGvizez6d6d1mpz2JcB6qfBUY+vy0u1EilA27ABptCnJVbd82WxQcx9IPyQlOPx65+owIB8+Zix8hRe8ig=
