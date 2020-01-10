@@ -3,7 +3,7 @@ __license__ = "GPL-3.0"
 __name__ = "micrometa"
 
 from . import *
-from _version import __version__
+from ._version import __version__
 import luddite
 from packaging import version
 
