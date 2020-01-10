@@ -39,8 +39,4 @@ deploy:
   - provider: pypi
     user: adamltyson
     distributions: sdist bdist_wheel
-    skip_cleanup: true
-    on:
-      tags: true
-    password:
-      secure: TTlYpso+ALh8nD0gPIh7oZdgQiPdpyO3C7OVZwMXgewDYC5dT4cNES2LZi8i2eDh/AO9KU0M6TNQuf+8TH2rQvLnhaM28IAa9G8MwrF4xSdaFc0sQQHp3SJVQ3htIZxcLUEnU5Px8xQnZwopefrk1lbofmJNJRlXSpKoQC3GF642OvfDWafzXNqYvuX/mPI9H63M/gzshnQnqZ/DcT4YMQK3xtpbuMomINQBuDH/mVUH9k7Jvy49gdFn85zAdUuvVuee52CZJ/ipkuznX+OyUIwyQjuNGh53k9EetirLbztnx3pjeygJ8euhA6UYk5GSF6sdbia9w/Jt8V0Moz+A2qbzWny+BJLrXBEiiEnVg3XPBIvhaAWGRMQ/s8bWjomEwjMCDljMeDuvP310H5H1A0/DbXoFGi8uvbFbkoaMh85zQotqSv+oIakZLaJzmgIzvhaD8JwmOwS1E7+99kZrdRfJsuAgNm4bDKAWJFaGZkNxrjYYKCkgkd08Tf7Kr2YxjECAj92Y1lFMD7F10VuBkviT6uPkPRF6JyEuXDWcDgSVn1mmOgavdYqNr1rAdoabPMtFhiNGVcjNPUhDW5/CIEEv+g049ctfu8iFg3SFnK8sEiBzwE759KWs8ugckv5V11vwSSOuFHwZTwvZMZ0g6oeORMLz6wU782hm/9kIbM8=
+    password: koalachips
