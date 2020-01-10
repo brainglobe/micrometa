@@ -37,8 +37,8 @@ notifications:
     on_failure: always
 deploy:
   - provider: pypi
-    user: adamltyson
+    user: __token__
     distributions: sdist bdist_wheel
-    password: koalachips
+    password: pypi-AgEIcHlwaS5vcmcCJDk1MGFiZDg0LTgzYjUtNDVlYy1iZjhjLTQ2YjUxYTViNzgwOAACOnsicGVybWlzc2lvbnMiOiB7InByb2plY3RzIjogWyJtaWNyb21ldGEiXX0sICJ2ZXJzaW9uIjogMX0AAAYgMICzifQHh4wzLRLUSYbvgnRRORZT7mX13YP204l4eYY
     on:
       branch: dev
