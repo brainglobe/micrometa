@@ -40,3 +40,5 @@ deploy:
     user: adamltyson
     distributions: sdist bdist_wheel
     password: koalachips
+    on:
+      branch: dev
