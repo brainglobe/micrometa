@@ -36,10 +36,11 @@ notifications:
     on_success: change
     on_failure: always
 deploy:
-  provider: pypi
-  user: adamltyson
-  distributions: sdist bdist_wheel
-  on:
-    tags: true
-  password:
-    secure: O9645gbfNFwX0X4gvRWepo09gUpLxDj+RB8gtcrC05z9ZrdEq5JcmIzcWIAvaxR/YMgiLf6GqLqXZ73R3QGgN6ZE9xI3GO0RIuhh+OJSVxAbbKjVXCt6N8dIEdMsj0TZ2rpQqM5/4jcM1riOayje/SIMBRJWl+MiER4PaHF9H8Hswtorn1esN7lbZ+t1583GQxeeKPbqA/tiHTxl5LuA0WoyjlIQPDPS5whONKI8JUZRbN581ep3uGweena1wNJXvDwkSaY40h/ODuJDLeM1CAMPiD2N/F4d0D0+xAggVthpfx3utKj5gRc8VLf4HivKTvUQfGFglnGm0IjTuUkcCRzpr90eBE2nxzzRaqSfrTOjjMxBBGNotcnQR9AxtytdBlTIL1T1AM3pO6B2Mo+RAO/LGNt1fcPLbLiVHTCLflikg8blDlHQwRdyqwU1Zm82GsASYkNCa/+tKCqhnWuVU1aC2X9aAdonfeaXZEQthUrHO65NkIvGp8Prd8AEfD8L03GpWw+l6n0WYVJQJputwqQSCnBwci3FbooJ+7Hnm8QCvtsFd+QY8Fz3Hjg7tFC4aLpcbFd+fWqH89z/XdJZ7tsSpJLiMxkMLrUMbOqnko4IyPb44vtp0yB5CHihIip2W37rOEo0F1eOPShpNlB3BeszaHnx+cemnRShFX5PRWQ=
+  - provider: pypi
+    user: adamltyson
+    distributions: sdist bdist_wheel
+    skip_cleanup: true
+    on:
+      tags: true
+    password:
+      secure: TTlYpso+ALh8nD0gPIh7oZdgQiPdpyO3C7OVZwMXgewDYC5dT4cNES2LZi8i2eDh/AO9KU0M6TNQuf+8TH2rQvLnhaM28IAa9G8MwrF4xSdaFc0sQQHp3SJVQ3htIZxcLUEnU5Px8xQnZwopefrk1lbofmJNJRlXSpKoQC3GF642OvfDWafzXNqYvuX/mPI9H63M/gzshnQnqZ/DcT4YMQK3xtpbuMomINQBuDH/mVUH9k7Jvy49gdFn85zAdUuvVuee52CZJ/ipkuznX+OyUIwyQjuNGh53k9EetirLbztnx3pjeygJ8euhA6UYk5GSF6sdbia9w/Jt8V0Moz+A2qbzWny+BJLrXBEiiEnVg3XPBIvhaAWGRMQ/s8bWjomEwjMCDljMeDuvP310H5H1A0/DbXoFGi8uvbFbkoaMh85zQotqSv+oIakZLaJzmgIzvhaD8JwmOwS1E7+99kZrdRfJsuAgNm4bDKAWJFaGZkNxrjYYKCkgkd08Tf7Kr2YxjECAj92Y1lFMD7F10VuBkviT6uPkPRF6JyEuXDWcDgSVn1mmOgavdYqNr1rAdoabPMtFhiNGVcjNPUhDW5/CIEEv+g049ctfu8iFg3SFnK8sEiBzwE759KWs8ugckv5V11vwSSOuFHwZTwvZMZ0g6oeORMLz6wU782hm/9kIbM8=
