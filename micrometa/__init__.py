@@ -1,9 +1,10 @@
+__version__ = "0.0.12"
 __author__ = "Adam Tyson"
 __license__ = "GPL-3.0"
 __name__ = "micrometa"
 
 from . import *
-from ._version import __version__
+
 import luddite
 from packaging import version
 

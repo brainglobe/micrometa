@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
-from micrometa._version import __version__
 
 requirements = ["configparser", "natsort", "pyyaml", "luddite"]
+
 setup(
     name="micrometa",
-    version=__version__,
+    version="0.0.12",
     description="Reading of microscopy metadata",
     install_requires=requirements,
     extras_require={
