@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-from micrometa.__init__ import __version__
+from micrometa._version import __version__
 
 requirements = ["configparser", "natsort", "pyyaml", "luddite"]
 setup(
