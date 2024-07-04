@@ -1,3 +1,5 @@
+# This project is no longer in development
+
 [![Travis](https://img.shields.io/travis/com/adamltyson/micrometa?label=Travis%20CI)](
     https://travis-ci.com/adamltyson/micrometa)
 [![Coverage Status](https://coveralls.io/repos/github/adamltyson/micrometa/badge.svg?branch=master)](https://coveralls.io/github/adamltyson/micrometa?branch=master)
@@ -7,8 +9,7 @@ Reading of microscopy metadata
 
 ### About
 micrometa reads metadata from various whole-organ microscopes for use with 
-[cellfinder](https://github.com/SainsburyWellcomeCentre/cellfinder) and
-[amap](https://github.com/SainsburyWellcomeCentre/amap-python).
+[BrainGlobe](http://brainglobe.info/).
 
 This is a work in progress, and currently the only metadata files supported 
 are:
